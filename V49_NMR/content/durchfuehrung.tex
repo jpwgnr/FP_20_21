@@ -1,1 +1,42 @@
 \section{Durchführung}
+Vor Begin der Messung wird die Apparatur justiert.
+Hierzu werden folgende Startparameter verwendet:
+\begin{addmargin}[10pt]{0pt}
+\begin{description}
+    \item[Frequenz] $F=\SI{21,7}{\MHz}$
+    \item[Pulslänge] $A=\SI{2}{\micro\m}$
+    \item[Anzahl der B-Pulse] $N=0$
+    \item[Periode] $P=\SI{0,5}{\s}$
+    \item[Shimps] $x=-1,0;\; y=-0,5;\; z=3,7;\; z^2=-2,4$    
+\end{description}
+\end{addmargin}
+Zunächst wird die Frequenz so eingestellt, dass das auf dem Oszillographen sichtbare Signal keine Schwingungen mehr aufweist.
+Anschließend wird die Phase variiert bis das Signal des Realteils maximal und das des Imaginärteils minimal ist.
+Um den Einfluss der Diffusionsprozesse in den ersten Messungen zu minimieren wird die Feldhomogenität des Feldes maximiert, indem der Gradient variiert wird bis die Abklingzeit des Signals möglichst lang ist.
+Die benötigten Impulslängen werden durch Maximierung ($90°$-Puls) und Minimierung ($180°$-Puls) des Signals ermittelt.
+Zuletzt wird die Temperatur in der Spule mit einem Thermoelement gemessen.
+Die ermittelten Parameter lauten:
+\begin{addmargin}[10pt]{0pt}
+\begin{description}
+    \item[Frequenz] $F=\SI{21,71370}{\MHz}$
+    \item[Phase] $\phi = -51°$ 
+    \item[Pulslängen] $\Delta t_{90}=\SI{2,7}{\micro\m}; \; \Delta t_{180}=\SI{5,2}{\micro\m}$
+    \item[Temperatur] $T=296,75$    
+\end{description}
+\end{addmargin}
+
+Für die $T_1$-Messung wird $A$ zunächst auf die $180°$-Pulslänge und $B$ auf die $90°$-Pulslänge gestellt.
+Die Anzahl der Pulse der Länge $B$ wird auf $N=1$ und die Periode auf $P=\SI{10}{\s}$ eingestellt.
+Anschließend wird der Pulsabstand $\tau$ variiert und die Amplitude des Signals vermessen.
+Sobald $\tau > \SI{1}{\s}$ ist wird die Periode auf $T=\tau+\SI{10}{\s}$ verlängert.
+
+Zur Messung von $T_2$ werden die Pulslängen von $A$ und $B$ getauscht und die Anzahl der $B$-Pulse auf $N=100$ gestellt, sodass 100 $180°$-Pulse auf einen $90°$-Puls folgen.
+Der Schalter \textit{MG} wird auf \textit{on} gestellt, damit der $90°$-Puls um $90°$ gegenüber dem $180°$-Puls verschoben ist.
+Der Pulsabstand $\tau$ wird so gewählt, dass die Amplitude des $100.$ Echos etwa $\textstyle{\frac{1}{3}}$ der des ersten Echos entspricht.
+Dann wird ein Bild aller Peaks mit dem Oszilloskop gespeichert.
+Anschließend wird der \textit{MG}-Schalter auf \textit{off} gestellt und auch dieses Bild gespeichert.
+
+Für die Messung der Diffusionskonstanten wird zunächst der Gradient in $z$-Richtung maximiert indem der z-Shimp auf seinen maximalen Wert gestellt wird.
+Die Werte für $A$ und $B$ werden aus der vorherigen $T_2$-Messung beibehalten und die Wiederholungen des $B$-Pulses auf $N=1$ reduziert.
+Dann wird $\tau$ stetig vergrößert und die Höhe des Echos vermessen, bis das Signal im Rauschen verschwindet.
+Bei einen Wert von $\tau$, für welchen sich ein gut sichtbares Echo ergibt, wird das Signal von Real- als auch Imaginärteil gespeichert.
