@@ -1,3 +1,45 @@
 \section{Auswertung}
-\label{sec:Auswertung}
+
+Vor jedem Versuchsteil wurden jeweils die Temperaturen gemessen. 
+Sie lag Konstant bei einem Wert von \SI{23.6}{\degree}.
+
+Im ersten Versuchsteil wurde die Relaxationszeit $T_1$ gemessen. 
+Die Werte, die bei dieser Messung gemessen wurden sind in Tab. \ref{tab:t1} aufgetragen. 
+In Abb. \ref{abb:t1} sind die Daten dargestellt worden und nach Formel \eqref{eq:t1} wurde ein Fit an die Daten gelegt.
+
+Die Parameter, die sich aus dem Fit ergeben haben sind 
+
+\begin{align*}
+U_1 &= 3 \\
+t_1 &= 5 \\.
+\end{align*}
+
+Im nächsten Versuchsteil wurden die Zeit $t_2$ gemessen. 
+Die Daten sind in Tab. \ref{tab:t2} aufgetragen und in Abb. \ref{abb:geradet2} als lineare Funktion aufgetragen worden. 
+Erneut wurde ein Fit mit der Funktion \eqref{eq:t2} durchgeführt. 
+Die Parameter, die sich daraus ergeben sind 
+
+\begin{align*}
+    U_1 &= 3 \\
+    t_1 &= 5 \\.
+\end{align*}
+
+Die letzte zu messende Größe ist die Diffusionskonstante $d$. 
+Dafür muss der Gradient $g$ mithilfe einer Fourier-Transformation gemessen werden. 
+Das dazugehörige Spektrum ist in Abb. \ref{abb:spektrum} zu sehen. 
+Nach der Fourier-Transformation ergibt sich folgende Abb. \ref{abb:fourier}. Der Abstand der Nullstellen auf der $x$-Achse beträgt demnach 
+\begin{align*}
+\gamma = \SI{12}{\hertz}.
+\end{align*} 
+
+Somit ergibt sich nach \eqref{eq:gradient} ein Wert von 
+\begin{equation*}
+g = \SI{12}{\per\metre}.
+\end{equation*}
+
+Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird sind die gemessenen Echohöhen, die sich mit einem Fit der Funktion \eqref{eq:echo} ergeben. Daraus wurde der Koeffizient $D$ zu 
+\begin{equation*}
+D = \SI{3}{\metre}
+\end{equation*}
+bestimmt.
 
