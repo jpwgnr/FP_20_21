@@ -71,6 +71,7 @@ Hierzu wird die Probe zunächst einem $180°$-Puls und nach einer Relaxationphas
 Aus den Blochschen-Gleichungen folgt, dass die zum Feld parallele Magnetisierungskomponente $M_\text{z}$ die $\tau$-Abhängigkeit
 \begin{equation}
     M_\text{z}(\tau)=M_0\left(1-2\exp(-\frac{\tau}{T_1})\right)
+    \label{eq:t1}
 \end{equation}
 aufweist.
 
@@ -83,22 +84,24 @@ Sobald die Spins sich wieder in Phase befinden kommt es zu einem weiteren Messsi
 Folgen auf dem $90°$-Puls mehrere $180°$-Pulse im zeitlichen Abstand von $2\tau$, kommt es nach jedem dieser Pulse erneut zu einem Echo.
 Hierbei nimmt die Amplitude des Echos exponentiell mit der Zeitkonstanten $T_2$ ab
 \begin{equation}
-    M_\text{y}(t)=M_0\exp(-\frac{t}{T_2})\, . \label{eq:Echo}
+    M_\text{y}(t)=M_0\exp(-\frac{t}{T_2}) + M_1\, . \label{eq:t2}
 \end{equation}
 Damit sich Abweichungen, welche durch eine Fehljustierung des $180°$-Pulses ergeben, nicht systematisch aufsummieren, werden die Schwingungen des $180°$-Pulses gegenüber des $90°$-Pulses um $90°$ in der Phase verschoben.
 Somit wird erreicht, dass sich diese Abweichungen bei jedem geradzahligen Echo herauskürzen.
 
 \subsection{Messung der Diffusionskonstante}
-Weist das Magnetfeld einen signifikanten Gradienten $G$ auf, nimmt die Echo-Amplitude schneller ab, als in Gleichung \eqref{eq:Echo} beschrieben und Diffusionsprozesse können nicht mehr vernachlässigt werden.
+Weist das Magnetfeld einen signifikanten Gradienten $G$ auf, nimmt die Echo-Amplitude schneller ab, als in Gleichung \eqref{eq:t2} beschrieben und Diffusionsprozesse können nicht mehr vernachlässigt werden.
 Die Amplitude der Echos wird dann durch eine weitere Zeitkonstanten
 \begin{equation}
-    T_\text{D}=\frac{3}{D\gamma^2 G^2\tau^2}
+    T_\text{D}=\frac{3}{D\gamma^2 G^2\tau^2} 
 \end{equation}
 bestimmt, sodass diese mit der Funktion
 \begin{equation}
     M_\text{y}=M_0\exp(-\frac{t}{T_2})\exp(-\frac{t}{T_\text{D}}) \stackrel{t=2\tau}{=} M_0\exp(-\frac{t}{T_2})\exp(-\frac{1}{12}D\gamma^2 G^2 t^3)
+    \label{eq:echo}
 \end{equation}
 abnimmt.
+
 
 
 

@@ -1,45 +1,95 @@
 \section{Auswertung}
 
-Vor jedem Versuchsteil wurden jeweils die Temperaturen gemessen. 
-Sie lag Konstant bei einem Wert von \SI{23.6}{\degree}.
+Im ersten Versuchsteil wurde die longitudinale Relaxationszeit $T_1$ gemessen. 
+Die Werte der Messung sind in Tab. \ref{tab:t1} aufgetragen. 
+In Abb. \ref{abb:t1} sind die Daten dargestellt worden und nach Formel \eqref{eq:t1} wurde ein Fit an die Daten durchgeführt.
 
-Im ersten Versuchsteil wurde die Relaxationszeit $T_1$ gemessen. 
-Die Werte, die bei dieser Messung gemessen wurden sind in Tab. \ref{tab:t1} aufgetragen. 
-In Abb. \ref{abb:t1} sind die Daten dargestellt worden und nach Formel \eqref{eq:t1} wurde ein Fit an die Daten gelegt.
+\input{./tables/tab_t1.tex}
 
-Die Parameter, die sich aus dem Fit ergeben haben sind 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/T1.pdf}
+    \caption{Die Pulsabstände $\tau$ sind gegen die zugehörigen Amplituden aufgetragen. Die Zeit-Achse ist logarithmiert worden.}
+    \label{abb:t1}
+\end{figure}
 
+Die Parameter, die sich aus dem Fit ergeben sind 
 \begin{align*}
-U_1 &= 3 \\
-t_1 &= 5 \\.
+    U_0 &= \SI{1.39(2)}{\volt} \\
+    T_1 &= \SI{2.96(4)}{\second} \\.
+\end{align*}
+Im nächsten Versuchsteil wurden die transversale Relaxationszeit $T_2$ bestimmt. 
+Dafür wurde die Meiboom-Gill-Methode verwendet. An die Maxima eines mit dem Oszilloskop aufgezeichneten Ereignisses wurde ein Fit mit der Funktion mit der Funktion \eqref{eq:t2} durchgeführt. Diese Daten und der Fit sind in Abb. \ref{abb:t2} zu sehen. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/T2.pdf}
+    \caption{Ein Ereignis der Meiboom-Gill-Methode wurde gemessen und ein Fit an die Maxima wurde durchgeführt. Die Maxima der Daten sind hier hervorgehoben worden.}
+    \label{abb:t2}
+\end{figure}
+
+Die Parameter, die sich daraus ergeben haben, sind 
+\begin{align*}
+    U_0 &= \SI{1.15(3)}{\volt} \\
+    U_1 &= \SI{65.73(3227)}{\milli\volt} \\
+    T_2 &= \SI{1.83(8)}{\second} \\.
 \end{align*}
 
-Im nächsten Versuchsteil wurden die Zeit $t_2$ gemessen. 
-Die Daten sind in Tab. \ref{tab:t2} aufgetragen und in Abb. \ref{abb:geradet2} als lineare Funktion aufgetragen worden. 
-Erneut wurde ein Fit mit der Funktion \eqref{eq:t2} durchgeführt. 
-Die Parameter, die sich daraus ergeben sind 
+Die letzte zu messende Größe ist die Diffusionskonstante $D$. Neben den Echohöhen muss dafür der Gradient $G$ mithilfe einer Fourier-Transformation gemessen werden. 
+Das gemessene Spektrum ist in Abb. \ref{abb:spektrum} zu sehen. Die Abbildung zeigt das Otto-Hahn-Verfahren.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/spektrum.pdf}
+    \caption{Hier ist das Spektrum des Otto-Hahn-Verfahrens bei einer kleinen Pulslänge gemessen worden. Die Daten werden benutzt um mittels einer Fourier-Transformation die letzten fehlenden Daten zur Bestimmung der Gradientenstärke zu ermitteln.}
+    \label{abb:spektrum}
+\end{figure}
 
+Nach der Fourier-Transformation ergibt sich die Abb. \ref{abb:fourier}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/echo_gradient.pdf}
+    \caption{Die Fourier-Transformierte der Daten in Abb. \ref{abb:spektrum}. Aus den Nullstellen lässt sich der Gradient bestimmen.}
+    \label{abb:fourier}
+\end{figure}
+Der Abstand der Nullstellen auf der Frequenzachse beträgt demnach 
 \begin{align*}
-    U_1 &= 3 \\
-    t_1 &= 5 \\.
-\end{align*}
-
-Die letzte zu messende Größe ist die Diffusionskonstante $d$. 
-Dafür muss der Gradient $g$ mithilfe einer Fourier-Transformation gemessen werden. 
-Das dazugehörige Spektrum ist in Abb. \ref{abb:spektrum} zu sehen. 
-Nach der Fourier-Transformation ergibt sich folgende Abb. \ref{abb:fourier}. Der Abstand der Nullstellen auf der $x$-Achse beträgt demnach 
-\begin{align*}
-\gamma = \SI{12}{\hertz}.
+d_f = \SI{15.35}{\kilo\hertz}.
 \end{align*} 
-
-Somit ergibt sich nach \eqref{eq:gradient} ein Wert von 
+Die Gradientenstärke lässt sich mit den bekannten Größen der Probenform
+\begin{align*}
+    \gamma &= \SI{267.5e6}{\per\second\per\tesla} \\
+    d_\text{Probe} &= \SI{4.4}{\milli\metre} \\ 
+    \end{align*} 
+und dem Faktor $d_f$ berechnen.
+Der Faktor $\gamma$ ist dabei das gyromagnetische Verhältnis für Protonen, $d_\text{Probe}$ ist der Innendurchmesser der Probe.
+Der Zusammenhang zwischen den Größen und der Gradientenstärke $G$ ist
 \begin{equation*}
-g = \SI{12}{\per\metre}.
+G = 2 \pi \frac{d_f}{d_\text{Probe} \gamma}.
+\end{equation*}
+Somit ergibt sich ein Wert von 
+\begin{equation*}
+G = \SI{0.0819}{\tesla\per\metre}.
 \end{equation*}
 
-Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird sind die gemessenen Echohöhen, die sich mit einem Fit der Funktion \eqref{eq:echo} ergeben. Daraus wurde der Koeffizient $D$ zu 
-\begin{equation*}
-D = \SI{3}{\metre}
-\end{equation*}
+
+
+Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird sind die gemessenen Echohöhen. In Tab. \ref{tab:t2} sind die Pulslängen gegen die Echohöhen aufgetragen. Die Daten sind in Abb. \ref{abb:echo} mit einem Fit der Funktion \eqref{eq:echo} dargestellt. 
+
+\input{./tables/tab_t2.tex}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/echo.pdf}
+    \caption{Die Daten wurden in einem linearen Zusammenhang aufgetragen und der Fit an die Daten ist auch dargestellt.}
+    \label{abb:echo}
+\end{figure}
+
+Daraus wurde der Koeffizient $T_D$ und die beiden Amplitudenfaktoren $U_0$ und $U_1$ zu 
+\begin{align*}
+T_D &= \SI{1.69(4)e-6}{\per\second\tothe{3}} \\
+U_0 &= \SI{1.47(1)}{\volt} \\
+U_1 &= \SI{33.21(1264)}{\milli\volt} \\
+\end{align*}
 bestimmt.
 
+Damit ergibt sich die Diffusionskonstante zu $D = \SI{1.882(33)e-9}{\meter\squared\per\second}$.

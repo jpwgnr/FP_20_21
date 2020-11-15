@@ -32,7 +32,7 @@ plt.plot(tau_new, t1_func(tau_new, *params1), label="Ausgleichskurve")
 plt.legend(loc="best")
 plt.grid()
 plt.tight_layout()
-plt.savefig("content/T1.pdf")
+plt.savefig("plots/T1.pdf")
 
 # T_2 - Messung
 
@@ -56,15 +56,12 @@ plt.plot(t_peak_new, t2_func(t_peak_new, *params2), label="Ausgleichskurve")
 plt.legend(loc="best")
 plt.grid()
 plt.tight_layout()
-plt.savefig("content/T2.pdf")
+plt.savefig("plots/T2.pdf")
 
 t2 = params2[0]
 
 
 t_echo, h_echo = np.genfromtxt("data/data_t2.txt", unpack=True)
-
-t_echo = t_echo[:-2]
-h_echo = h_echo[:-2]
 
 def echo_func(t, d, m0, m1):
     return m0 * np.exp(-2*t/t2) * np.exp(-t**3/d) + m1
@@ -81,7 +78,9 @@ plt.plot(t_echo_new**3*1e6, np.log(echo_func(t_echo_new, *params3))-2*t_echo_new
 plt.legend(loc="best")
 plt.grid()
 plt.tight_layout()
-plt.savefig("content/echo.pdf")
+plt.savefig("plots/echo.pdf")
+
+np.savetxt("tables/tab_echo.txt",np.transpose([t_echo**3*1e6, np.log(h_echo)-2*t_echo/t2]))
 
 # Fourier-Trafo:
     
@@ -89,14 +88,14 @@ plt.savefig("content/echo.pdf")
 #Die erste Spalte enthält die Zeiten in Sekunden, die zweite Spalte
 #den Realteil und die dritte Spalte den Imaginärteil
 data = np.genfromtxt("data/number4a.csv", delimiter=",", unpack= True)
-times = data[0]
-real = data[1]
-imag = data[2]
+times1 = data[0]
+real1 = data[1]
+imag1 = data[2]
 #Suchen des Echo-Maximums und alle Daten davor abschneiden
-start = np.argmin(real)
-times = times[start:]
-real = real[start:]
-imag = imag[start:]
+start = np.argmin(real1)
+times = times1[start:]
+real = real1[start:]
+imag = imag1[start:]
 #Phasenkorrektur - der Imaginärteil bei t=0 muss = 0 sein
 phase = np.arctan2(imag[0], real[0])
 #Daten in komplexes Array mit Phasenkorrektur speichern
@@ -119,8 +118,19 @@ freqs = np.fft.fftshift(np.fft.fftfreq(len(compsignal), times[1]-times[0]))
 np.savetxt("data/echo_gradient_fft.txt", np.array([freqs, np.real(fftdata), \
 np.imag(fftdata)]).transpose())
 #Erstellen eines Plots
+
 plt.figure()
-plt.xlabel(r"$f / \si{kHz}")
+plt.xlabel(r"$t / \si{\milli\second}")
+plt.ylabel(r"Amplitude / $\si{\volt}$")
+plt.plot(times1*1e3, real1, label="Realteil")
+plt.plot(times1*1e3, imag1, label="Imaginärteil")
+plt.legend(loc="best")
+plt.grid()
+plt.tight_layout()
+plt.savefig("plots/spektrum.pdf")
+
+plt.figure()
+plt.xlabel(r"$f / \si{\kilo\hertz}")
 plt.ylabel(r"Anzahl")
 plt.plot(freqs[(freqs>-15000) & (freqs<15000)]*1e-3, np.real(fftdata)[(freqs>-15000) & (freqs<15000)], "x", label="Fourier-Transformation")
 #plt.plot(freqs, np.real(fftdata))
@@ -129,16 +139,16 @@ plt.plot(freqs[(freqs>-15000) & (freqs<15000)]*1e-3, np.real(fftdata)[(freqs>-15
 plt.legend(loc="best")
 plt.grid()
 plt.tight_layout()
-plt.savefig("content/echo_gradient.pdf")
+plt.savefig("plots/echo_gradient.pdf")
 
 d_f = 6.578947368420178464e+03 + 8.771929824560238558e+03
 gamma = const.value("proton gyromag. ratio")
 gamma_u = const.unit("proton gyromag. ratio")
 durchmesser = 4.4e-3 # oder 4.2e-3 ?
 g = 2 * np.pi *d_f /gamma /durchmesser # Gradient, damit dann Diffusionskoeffizient bestimmen
-Diff = 1/params3[0] * (3/2) /gamma**2 /g**2 
+Diff = 1/ufloat(params3[0], err3[0]) * (3/2) /gamma**2 /g**2 
 
-f=  open("content/results.txt", "w")
+f=  open("plots/results.txt", "w")
 f.write(f"T_1 =( {params1[0]} +/- {err1[0]}) s, U_0 = ({params1[1]} +/- {err1[1]}) V\n")
 f.write(f"T_2 =( {params2[0]} +/- {err2[0]}) s, U_0 = ({params2[1]} +/- {err2[1]}) V, U_1 = ({params2[2]} +/- {err2[2]}) V\n ")
 f.write(f"Konstante =( {params3[0]} +/- {err3[0]}) s, U_0 = ({params3[1]} +/- {err3[1]}) V, U_1 = ({params3[2]} +/- {err3[2]}) V \n")
