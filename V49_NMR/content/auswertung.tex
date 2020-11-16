@@ -1,25 +1,25 @@
 \section{Auswertung}
 
-Im ersten Versuchsteil wurde die longitudinale Relaxationszeit $T_1$ gemessen. 
+Im ersten Versuchsteil wird die longitudinale Relaxationszeit $T_1$ gemessen. 
 Die Werte der Messung sind in Tab. \ref{tab:t1} aufgetragen. 
-In Abb. \ref{abb:t1} sind die Daten dargestellt worden und nach Formel \eqref{eq:t1} wurde ein Fit an die Daten durchgeführt.
+In Abb. \ref{abb:t1} sind die Daten dargestellt und nach Formel \eqref{eq:t1} wird ein Fit an die Daten durchgeführt.
 
 \input{./tables/tab_t1.tex}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/T1.pdf}
-    \caption{Die Pulsabstände $\tau$ sind gegen die zugehörigen Amplituden aufgetragen. Die Zeit-Achse ist logarithmiert worden.}
+    \caption{Die Pulsabstände $\tau$ sind gegen die zugehörigen Amplituden aufgetragen. Die Zeit-Achse ist logarithmiert.}
     \label{abb:t1}
 \end{figure}
 
 Die Parameter, die sich aus dem Fit ergeben sind 
 \begin{align*}
     M_0 &= \SI{1.39(2)}{\volt} \\
-    T_1 &= \SI{2.96(4)}{\second} \\.
+    T_1 &= \SI{2.96(4)}{\second}\,. \\
 \end{align*}
-Im nächsten Versuchsteil wurden die transversale Relaxationszeit $T_2$ bestimmt. 
-Dafür wurde die Meiboom-Gill-Methode verwendet. An die Maxima eines mit dem Oszilloskop aufgezeichneten Ereignisses wurde ein Fit mit der Funktion mit der Funktion \eqref{eq:t2} durchgeführt. Diese Daten und der Fit sind in Abb. \ref{abb:t2} zu sehen. 
+Im nächsten Versuchsteil werden die transversale Relaxationszeit $T_2$ bestimmt. 
+Dafür wird die Meiboom-Gill-Methode verwendet. An die Maxima eines mit dem Oszilloskop aufgezeichneten Ereignisses wird ein Fit mit der Funktion \eqref{eq:t2} durchgeführt. Diese Daten und der Fit sind in Abb. \ref{abb:t2} zu sehen. 
 
 \begin{figure}
     \centering
@@ -28,11 +28,11 @@ Dafür wurde die Meiboom-Gill-Methode verwendet. An die Maxima eines mit dem Osz
     \label{abb:t2}
 \end{figure}
 
-Die Parameter, die sich daraus ergeben haben, sind 
+Die Parameter, die sich daraus ergeben, sind 
 \begin{align*}
     M_0 &= \SI{1.15(3)}{\volt} \\
     M_1 &= \SI{65.73(3227)}{\milli\volt} \\
-    T_2 &= \SI{1.83(8)}{\second} \\.
+    T_2 &= \SI{1.83(8)}{\second} \,. \\
 \end{align*}
 
 Die letzte zu messende Größe ist die Diffusionskonstante $D$. Neben den Echohöhen muss dafür der Gradient $G$ mithilfe einer Fourier-Transformation gemessen werden. 
@@ -40,7 +40,7 @@ Das gemessene Spektrum ist in Abb. \ref{abb:spektrum} zu sehen. Die Abbildung ze
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{plots/spektrum.pdf}
-    \caption{Hier ist das Spektrum des Otto-Hahn-Verfahrens bei einer kleinen Pulslänge gemessen worden. Die Daten werden benutzt um mittels einer Fourier-Transformation die letzten fehlenden Daten zur Bestimmung der Gradientenstärke zu ermitteln.}
+    \caption{Hier wird das Spektrum des Otto-Hahn-Verfahrens bei einer kleinen Pulslänge gemessen. Die Daten werden benutzt um mittels einer Fourier-Transformation die letzten fehlenden Daten zur Bestimmung der Gradientenstärke zu ermitteln.}
     \label{abb:spektrum}
 \end{figure}
 
@@ -61,7 +61,7 @@ Die Gradientenstärke lässt sich mit den bekannten Größen der Probenform
     d_\text{Probe} &= \SI{4.4}{\milli\metre} \\ 
     \end{align*} 
 und dem Faktor $d_f$ berechnen.
-Der Faktor $\gamma$ ist dabei das gyromagnetische Verhältnis für Protonen (\cite{scipy}, der CODATA 2018 Wert), $d_\text{Probe}$ ist der Innendurchmesser der Probe.
+Der Faktor $\gamma$ ist das gyromagnetische Verhältnis für Protonen (\cite{scipy}, der CODATA 2018 Wert), $d_\text{Probe}$ ist der Innendurchmesser der Probe.
 Der Zusammenhang zwischen den Größen und der Gradientenstärke $G$ ist
 \begin{equation*}
 G = 2 \pi \frac{d_f}{d_\text{Probe} \gamma}.
@@ -73,7 +73,7 @@ G = \SI{0.0819}{\tesla\per\metre}.
 
 
 
-Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird sind die gemessenen Echohöhen. In Tab. \ref{tab:t2} sind die Pulslängen gegen die Echohöhen aufgetragen. Die Daten sind in Abb. \ref{abb:echo} mit einem Fit der Funktion \eqref{eq:echo} dargestellt. 
+Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird, sind die Echohöhen. In Tab. \ref{tab:t2} sind die Pulslängen gegen die Echohöhen aufgetragen. Die Daten sind in Abb. \ref{abb:echo} mit einem Fit der Funktion \eqref{eq:echo} dargestellt. 
 
 \input{./tables/tab_t2.tex}
 
@@ -84,7 +84,7 @@ Das letzte was zur Bestimmung der Diffusionskonstante benötigt wird sind die ge
     \label{abb:echo}
 \end{figure}
 
-Daraus wurde der Koeffizient $T_D$ und die beiden Amplitudenfaktoren $U_0$ und $U_1$ zu 
+Daraus wird der Koeffizient $T_D$ und die beiden Amplitudenfaktoren $M_0$ und $M_1$ zu 
 \begin{align*}
 T_D &= \SI{1.69(4)e-6}{\per\second\tothe{3}} \\
 M_0 &= \SI{1.47(1)}{\volt} \\
