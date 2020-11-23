@@ -1,0 +1,23 @@
+# pgf-Backend benutzen
+backend : pgf
+
+# Größe der Zeichenfläche in Zoll
+figure.figsize : 5.78, 3.57
+
+# Serifenfont benutzen
+font.family : serif
+
+# Fontgrößen
+font.size : 11
+legend.fontsize : medium
+xtick.labelsize : 9
+ytick.labelsize : 9
+
+# unsere Fonteinstellungen benutzen
+pgf.rcfonts : False
+
+# TeX benutzen
+text.usetex : True
+pgf.texsystem : lualatex
+# gib pwd ein in diesem Ordner und den Output dann hier vor /header-matplotlib.tex schreiben, um die plot.py mit Latex zu nutzen
+pgf.preamble : \input{/home/lewis206/FP_20_21/Vorlage/header-matplotlib.tex}
