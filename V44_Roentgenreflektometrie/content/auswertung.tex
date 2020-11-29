@@ -28,7 +28,7 @@ Die Reflektivität ergibt sich durch die Differenz aus dem diffusen Scan und den
     \label{abb:diffus}
 \end{figure}
 
-Dann werden die Werte am Winkel des Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliziumoberfläche, die sich aus Formel \ref{eq:Reflektivitat} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich dabei über die Wellenlänge $\lambda = \SI{1.54e-10}{\meter}$ der K-$\alpha$ Linie von Kupfer. 
+Dann werden die Werte am Winkel des Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliziumoberfläche, die sich aus Formel \eqref{eq:r} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich dabei über die Wellenlänge $\lambda = \SI{1.54e-10}{\meter}$ der K-$\alpha$ Linie von Kupfer. 
 Der Brechungsindex von Silizium ist außerdem $n = \num{1} - \num{7.6e-6} + \num{1.73i e-9}$.
 \begin{figure}
     \centering
@@ -37,7 +37,7 @@ Der Brechungsindex von Silizium ist außerdem $n = \num{1} - \num{7.6e-6} + \num
     \label{abb:norm}
 \end{figure}
 
-Der Geometriewinkel lässt sich aus der Abbildung \ref{abb:dreieck} ablesen. Der Abstand von der Mitte zu den Schnittpunkten des Dreiecks entspricht dem Wert des Geometriewinkels. Dieser beträgt \SI{0.72}{\degree}. Mithilfe der Formel \ref{eq:geometrie} und dem gemessenen Durchmesser der Probe, der $D = \SI{2}{\milli\metre}$ beträgt, ergibt sich ein Geometriefaktor von $G = \num{80} \cdot \sin \alpha_i$.
+Der Geometriewinkel lässt sich aus der Abbildung \ref{abb:dreieck} ablesen. Der Abstand von der Mitte zu den Schnittpunkten des Dreiecks entspricht dem Wert des Geometriewinkels. Dieser beträgt \SI{0.72}{\degree}. Mithilfe der Formel \eqref{eq:geometrie} und dem gemessenen Durchmesser der Probe, der $D = \SI{2}{\milli\metre}$ beträgt, ergibt sich ein Geometriefaktor von $G = \num{80} \cdot \sin \alpha_i$.
 
 \begin{figure}
     \centering
@@ -46,12 +46,12 @@ Der Geometriewinkel lässt sich aus der Abbildung \ref{abb:dreieck} ablesen. Der
     \label{abb:dreieck}
 \end{figure}
 
-Aus den Kiessig Oszillationen ergibt sich nach Gleichung \ref{eq:kiessig} die Schichtdicke. 
+Aus den Kiessig Oszillationen ergibt sich nach Gleichung \eqref{eq:kiessig} die Schichtdicke. 
 Dafür müssen die Stellen der Minima bestimmt werden. Hier wurden 8 eindeutige Minima gemessen. Aus den Positionen dieser Minima lässt sich dann der Betrag der $q$-Werte bestimmen und aus der Differenz dieser Werte ergibt sich dann die Schichtdicke. Diese beträgt im Mittel $z = \SI{900(40)}{\angstrom}$. 
 
 Zur Bestimmung des Dispersionsprofils wird der Parratt-Algorithmus benutzt. 
 In Abbildung \ref{abb:parratt} sind die Messwerte zusammen mit einer Theoriekure des Parratt-Algorithmus aufgetragen. 
-Als Parameter wurden hierbei nach Formel \ref{eq:imag} die Werte 
+Als Parameter wurden hierbei nach Formel \eqref{eq:imag} und \eqref{eq:rau} die Werte 
 \begin{align*}
  \delta_\text{Si} &= \num{5.7e-6}\\
  \delta_\text{PS} &= \num{5.1e-6} \\

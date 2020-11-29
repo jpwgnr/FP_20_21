@@ -7,21 +7,23 @@ Die Wellenlänge der in Röntgenreflexionsversuchen verwendeten Strahlung liegt 
 Röntgenstrahlen besitzen einen Brechungsindex der Form
 \begin{equation}
     n=1-\delta + i \beta \, .
+    \label{eq:imag}
 \end{equation}
 Wobei $\delta = \frac{\lambda^2}{2\pi}r_e\rho > 0$ eine kleine Korrektur der Größenordnung $10^{-6}$ darstellt und $\beta = \frac{\lambda}{4\pi}\mu \approx 10^{-7}$ (für Röntgenstrahlung der Energie $E=\SI{8}{\keV}$) die Absorption beschreibt.
 Die Tatsache, dass der Realteil des Brechungsindex kleiner als $1$ ist, ermöglicht das Auftreten von äußerer Totalreflexion, welche im folgenden Abschnitt genauer erläutert wird.
 
 \subsection*{Röntgenreflektivität an glatten Grenzflächen}
 Trifft eine elektromagnetische Welle in einem Medium mit dem Brechungsindex $n_1$ auf eine Grenzfläche zu einem Medium mit dem Brechungsindex $n_2$, so wird der Zusammenhang zwischen dem Winkel $\alpha_1$ der einfallenden Welle und dem Winkel $\alpha_2$ der transmittierten Welle durch das \textit{Snellius'sche Brechungsgesetz}
-\begin{equation}
+\begin{equation*}
     \frac{\cos{\alpha_1}}{\cos{\alpha_2}}=\frac{n_2}{n_1}
-\end{equation}
+\end{equation*}
 beschrieben.
 Da für Röntgenstrahlung $\operatorname{Re}(n_2)<1$ ist, gilt stets $\alpha_2 < \alpha_1$.
 Somit existiert ein kritischer Winkel $\alpha_1 = \alpha_c$ bei welchen $\alpha_2=0$ ist und es somit zur Totalreflexion der Welle kommt.
 Unter Vernachlässigung der Absorption liegt dieser kritische Winkel bei 
 \begin{equation}
     \alpha_c = \sqrt{2\delta} = \lambda \sqrt{\frac{r_e \rho}{\pi}}\, .
+    \label{eq:delta}
 \end{equation}
 Hierbei ist $\rho$ die Dichte des Materials und $r_e$ der klassische Elektronenradius.
 Die Brechung einer elektromagnetischen Welle und die verwendeten Parameter sind in Abbildung \ref{fig:tfig1} dargestellt.
@@ -38,8 +40,8 @@ Die \textit{fresnelschen Formeln} beschreiben den Reflexions- und Transmissionsk
 Hierbei wird im Allgemeinen zwischen t- und s-polarisiertem Anteil der Welle unterschieden.
 Im Falle von Röntgenstrahlung ist dieser Unterschied jedoch vernachlässigbar, sodass für den Reflexions- und Transmissionskoeffizient
 \begin{align}
-    r &= \frac{k_{i,z}-k_{t,z}}{k_{i,z}+k_{t,z}} = \frac{n_1\cos{\alpha_1}-n_2\cos{\alpha_2}}{n_1 \cos{\alpha_1}+n_2\cos{\alpha_2}}\\
-    t &= \frac{2k_{i,z}}{k_{i,z}+k_{t,z}} = \frac{2 n_1\cos{\alpha_1}}{n_1 \cos{\alpha_1}+n_2\cos{\alpha_2}}
+    r &= \frac{k_{i,z}-k_{t,z}}{k_{i,z}+k_{t,z}} = \frac{n_1\cos{\alpha_1}-n_2\cos{\alpha_2}}{n_1 \cos{\alpha_1}+n_2\cos{\alpha_2}} \label{eq:r}\\
+    t &= \frac{2k_{i,z}}{k_{i,z}+k_{t,z}} = \frac{2 n_1\cos{\alpha_1}}{n_1 \cos{\alpha_1}+n_2\cos{\alpha_2}} \nonumber
 \end{align}
 gilt.
 Hierbei gilt $k_{i,z} = k \sin{\alpha_1}$ und $k_{t,z}= k\sqrt{n^2-\cos^2 \alpha_1}$.
@@ -71,6 +73,7 @@ Zu destruktiver Interferenz kommt es genau dann wenn der Gangunterschied der sic
 So erlaubt die Lage der Oszillationsminima Rückschlüsse auf die Schichtdicke des Materials, welche demnach
 \begin{equation}
     d = \frac{2\pi}{\Delta q_z}\approx \frac{\lambda}{2\Delta \alpha_1}
+    \label{eq:kiessig}
 \end{equation}
 beträgt.
 Hier entspricht $q_z=2k\sin{\alpha_1}$ der z-Komponente des Wellenvektorübertrags und $\Delta q_z$ bzw $\Delta \alpha_1$ jeweils der Differenz dieser Größen an den Minima.
@@ -88,16 +91,16 @@ Die $(N+1)$-te Schicht wird als unendlich Dick angenommen, sodass keine weitere 
 \label{fig:tfig4}
 \end{figure}
 Das Verhältnis der Amplituden der reflektierten und transmittierten Welle an der $j$-ten Grenzfläche entspricht nach dem Parratt Algorithmus
-\begin{equation}
+\begin{equation*}
     X_j = \frac{R_j}{T_j}=\exp(-2ik_{z,j}z_j)\frac{r_{j, j+1}+X_{j+1}\exp(2ik_{z,j+1}z_j)}{1+r_{j,j+1}X_{j+1}\exp(2ik_{z,j+1}z_j)}\, .
-\end{equation}
+\end{equation*}
 
 \subsection*{Röntgenreflektivität an rauen Grenzflächen}
 In der Realität besitzen Grenzflächen immer eine endliche Rauigkeit, sodass die gemessene Reflektivität geringer ist als die Fresnelreflektivität.
 Die Rauigkeit wird durch die Einführung der modifizierten Fresnelkoeffizienten
 \begin{align}
-    \tilde{r}_{j, j+1} &= r_{j,j+1}\exp\left(-2k_{z,j}k_{z,j+1}\sigma_j^2\right)\\
-    \tilde{t}_{j, j+1} &= t_{j,j+1}\exp\left(\frac{1}{2}(k_{z,j}-k_{z,j+1})^2\sigma_j^2\right )\\
+    \tilde{r}_{j, j+1} &= r_{j,j+1}\exp\left(-2k_{z,j}k_{z,j+1}\sigma_j^2\right) \label{eq:rau} \\
+    \tilde{t}_{j, j+1} &= t_{j,j+1}\exp\left(\frac{1}{2}(k_{z,j}-k_{z,j+1})^2\sigma_j^2\right )\nonumber
 \end{align}
 berücksichtigt. Dabei bezeichnet $\sigma_j$ die Rauigkeit der $j$-ten Schicht.
 
@@ -110,6 +113,7 @@ Wie in Abbildung \ref{fig:tfig5} zu sehen ist, trifft erst ab einem genügend gr
 Da in diesem Versuch sehr kleinen Winkeln $\alpha_1$ verwendet werden, wird dieser Intensitätsverlust durch den sogenannten \textit{Geometriefaktor}
 \begin{equation}
     G = \frac{D\sin{\alpha_1}}{d_0} \qquad \text{mit} \qquad \alpha_1 < \alpha_g
+    \label{eq:geometrie}
 \end{equation}
 \end{minipage}
 \begin{minipage}[t]{0.44\textwidth}
