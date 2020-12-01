@@ -1,2 +1,79 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Der Detektor-Scan hat gut funktioniert und der Fit mit der Gaußverteilung zeigte, dass das Zentrum des Scans bei fast \SI{0}{\degree} lag. 
+Die Abweichung zwischen der Funktion der idealen glatten Siliciumoberfläche und den gemessenen normierten Daten lässt sich durch die Rauigkeit des Materials erklären. Durch Nutzung der modifizierten Fresnelkoeffizienten hätten die Kurven besser aneinander angepasst werden können. 
+
+Die Korrektur durch den Geometriefaktor hätte genauer durchgeführt werden können, wäre sowohl der Geometriewinkel durch exaktere Auflösung bestimmt worden als auch durch eine exaktere Bestimmung des Probendurchmessers. Dieser wurde lediglich mit dem Zollstock Millimeter genau abgeschätzt, während die Auflösung eines Zollstocks bei etwa \SI{\pm5}{\milli\meter} liegt.
+
+Die Schichtdicke, die als Mittelwert gebildet wurde lag bei $z = \SI{876(30)}{\angstrom}$ und hat somit einen relativen Fehler von \SI{3.42}{\percent}. Durch eine genauere Aufschlüsselung der Winkel in diesem Gebiet, hätten die Orte der Minima noch deutlich exakter bestimmt werden können. 
+
+Die Schichtdicke, die sich durch den Parratt-Algorithmus ergeben hat, liegt bei $z = \SI{820}{\angstrom}$, was einer relativen Abweichung von \SI{6.4}{\percent} entspricht und weniger als \SI{2}{\sigma} von dem gemessenen Wert abweicht.
+Die Parameter $\delta_\text{Si, Lit}= \num{7.6e-6}$ und $\delta_\text{PS,Lit}=\num{3.5e-6}$ weichen um \SI{25}{\percent} bzw. um \SI{31.4}{\percent} von den durch die Theoriekurve bestimmten Werten ab. 
+
+Die Winkel $\theta_\text{c, Parratt, Si}= \SI{0.193}{\degree}$ und $\theta_\text{c, Parratt, PS}= \SI{0.183}{\degree}$ weichen jeweils um \SI{13.45}{\percent} und \SI{19.6}{\percent} von den Literaturwerten ab. 
+
+\newpage
+\section{Anhang}
+
+\begin{minted}{python}
+
+# Parratt 
+
+z = 8.2e-8 
+delta1 = 5.1e-6
+delta2 = 5.7e-6
+beta1 = 400 
+beta2 = 500
+sigma1 = 5.5e-10
+sigma2 = 8e-10
+
+# Extra Konstanten um den Code verständlicher zu machen
+n1 = 1
+const_p = 1.54e-8j/(4*np.pi)
+normal_p = 1.54e-8/(4*np.pi)
+
+# Der Algorithmus -> im Endeffekt haben wir einfach nur die Formel runtergeschrieben
+# Wir haben versucht die einzelnen Teile zu beschriften mit Kommentaren.
+# Ich hoffe trotz der Unübersichtlichkeit wird die Idee klar.
+def parat(a,delta1,delta2,beta1,beta2,sigma1,sigma2):
+    return np.abs(
+    (((k*np.sqrt(n1**2-np.cos(a)**2))-(k*np.sqrt((1- delta1 -beta1 * const_p)**2
+    -np.cos(a)**2)))/ # r_{0,1} Zähler
+    ((k*np.sqrt(n1**2-np.cos(a)**2))+(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2)))  # r_{0,1} Nenner
+    *np.exp(-2*(k*np.sqrt(n1**2-np.cos(a)**2))
+    *(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2))*sigma1**2) # Rauheit Korrektur e^{-2*k_{0}*k{1} *sigma1**2}
+    +np.exp(-2j*(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2))*z) # + X_2 : e^{2i k_{1} z}
+    *((k*np.sqrt((1-delta1-beta1*const_p)**2-np.cos(a)**2)) 
+    -(k*np.sqrt((1-delta2-beta2*const_p)**2-np.cos(a)**2))) #r_{1,2} Zähler
+    /((k*np.sqrt((1-delta1-beta1*const_p)**2-np.cos(a)**2)) 
+    +(k*np.sqrt((1-delta2-beta2*const_p)**2-np.cos(a)**2))) # r_{1,2} Nenner
+    *np.exp(-2*(k*np.sqrt((1-delta1-beta1*const_p)**2 -np.cos(a)**2))
+    *(k*np.sqrt((1-delta2-beta2*const_p)**2
+    -np.cos(a)**2))*sigma2**2))/ # Rauheit Korrektur e^{-2*k_{0}*k{1} *sigma2**2}
+    (1+((k*np.sqrt(n1**2-np.cos(a)**2))
+    -(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2))) # Nenner startet hier 1+ r_{0,1} Zähler
+    /((k*np.sqrt(n1**2-np.cos(a)**2))
+    +(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2)))    # r_{0,1} Nenner
+    *np.exp(-2*(k*np.sqrt(1**2-np.cos(a)**2))
+    *(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2))*sigma1**2) # Rauheit Korrektur e^{-2*k_{0}*k{1} *sigma1**2}
+    *np.exp(-2j*(k*np.sqrt((1-delta1-beta1*const_p)**
+    -np.cos(a)**2))*z) # *X_2 : e^{2i k_{1} z}
+    *((k*np.sqrt((1-delta1-beta1*const_p)**2-np.cos(a)**2)) 
+    -(k*np.sqrt((1-delta2-beta2*const_p)**2
+    -np.cos(a)**2)))/ #r_{1,2} Zähler
+    ((k*np.sqrt((1-delta1-beta1*const_p)**2-np.cos(a)**2))
+    +(k*np.sqrt((1-delta2-beta2*const_p)**2
+    -np.cos(a)**2))) # r_{1,2} Nenner
+    *np.exp(-2*(k*np.sqrt((1-delta1-beta1*const_p)**2
+    -np.cos(a)**2))*(k*np.sqrt((1-delta2-beta2*const_p)**2
+    -np.cos(a)**2))*sigma2**2)) # Rauheit Korrektur e^{-2*k_{0}*k{1} *sigma1**2}
+    )**2
+    
+    \end{minted}
