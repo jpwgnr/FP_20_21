@@ -1,20 +1,20 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Im ersten Schritt soll an den Detektor-Scan eine Gaußverteilung gefittet werden und der Wert der maximalen Intensität und der Halbwertsbreite sollen ermittelt werden.
+Im ersten Schritt soll eine Gaußverteilung  an den Detektor-Scan gefittet und die Werte der maximalen Intensität und der Halbwertsbreite ermittelt werden.
 Die Daten und der Fit einer Gaußfunktion an die Daten nach der Formel 
 \begin{equation*}
     I(\theta) = \frac{a}{\sigma\sqrt{2\pi}} \exp\left( \frac{-\left( \theta - \theta_0\right)^2}{2 \sigma} \right)
 \end{equation*} sind in Abbildung \ref{abb:detector} zu sehen.
-Die Werte, die sich aus dem Fit ergeben haben sind
+Die Werte, die sich aus dem Fit ergeben sind
 \begin{align*}
 a &= \num{1.815(15)e5} \\
-\theta_0 &= \SI{0.0018(4)}{\degree} \\
-\sigma &= \SI{0.0418(4)}{\degree}. \\
+\theta_0 &= \SI{0.0018(4)}{\degree} , \\
+\sigma &= \SI{0.0418(4)}{\degree}\,. \\
 \end{align*}
 
 Die Amplitude $ \frac{a}{\sigma\sqrt{2\pi}}$ ergibt sich somit zu \num{1.732(22)e6} Events als Maximum. 
-Die Halbwertsbreite beträgt $2 \sqrt{2 \ln 2} \, \sigma$ also \SI{0.0985(9)}{\degree}.
+Die Halbwertsbreite beträgt $2 \sqrt{2 \ln 2} \, \sigma$, also \SI{0.0985(9)}{\degree}.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/detector_scan.pdf}
@@ -22,7 +22,8 @@ Die Halbwertsbreite beträgt $2 \sqrt{2 \ln 2} \, \sigma$ also \SI{0.0985(9)}{\d
     \label{abb:detector}
 \end{figure}
 
-Die Reflektivität ergibt sich durch die Differenz aus dem diffusen Scan und den eigentlichen Messwerten. Die korrigierten Werte sind gemeinsam mit dem diffusen Scan und den Messwerten in \ref{abb:diffus} zu sehen.
+Die Reflektivität ergibt sich aus der Differenz des diffusen Scan und der eigentlichen Messwerten. 
+Die korrigierten Werte sind gemeinsam mit dem diffusen Scan und den Messwerten in Abbildung \ref{abb:diffus} zu sehen.
 
 \begin{figure}
     \centering
@@ -31,8 +32,8 @@ Die Reflektivität ergibt sich durch die Differenz aus dem diffusen Scan und den
     \label{abb:diffus}
 \end{figure}
 
-Dann werden die Werte am Winkel des Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliciumoberfläche, die sich aus Formel \eqref{eq:r} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich über die Wellenlänge der K-$\alpha$ Linie von Kupfer mit einem Wert von $\lambda = \SI{1.54e-10}{\meter}$. 
-Der benötigte Brechungsindex von Silicium ist außerdem $n = \num{1} - \num{7.6e-6} + \num{1.73i e-9}$ \cite{skript}.
+Anschließend werden die Werte am Winkel des Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliciumoberfläche, die sich aus Formel \eqref{eq:r} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich über die Wellenlänge der K-$\alpha$ Linie von Kupfer mit einem Wert von $\lambda = \SI{1.54e-10}{\meter}$. 
+Der benötigte Brechungsindex von Silicium ist $n = \num{1} - \num{7.6e-6} + \num{1.73i e-9}$ \cite{skript}.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/messwerte_norm.pdf}
@@ -40,7 +41,10 @@ Der benötigte Brechungsindex von Silicium ist außerdem $n = \num{1} - \num{7.6
     \label{abb:norm}
 \end{figure}
 
-Der Geometriewinkel lässt sich aus Abbildung \ref{abb:dreieck} ablesen. Der Abstand von der Mitte bei $\theta = \SI{0}{\degree}$ zu den Schnittpunkten des Dreiecks entspricht dem Wert des Geometriewinkels. Dieser beträgt $\theta_g = \SI{0.7}{\degree}$. Mithilfe der Formel \eqref{eq:geometrie} und dem gemessenen Durchmesser der Probe, der $D = \SI{21.5}{\milli\metre}$ beträgt, ergibt sich eine Strahlhöhe $d_0 = \SI{0.263}{\milli\meter}$ und ein Geometriefaktor von $G = \num{81.85} \cdot \sin \theta_i$ für alle Winkel $theta_i$ die kleiner als der Geometriewinkel $\theta_g$ sind.
+Der Geometriewinkel lässt sich aus Abbildung \ref{abb:dreieck} ablesen. 
+Der Abstand von der Mitte bei $\theta = \SI{0}{\degree}$ zu den Schnittpunkten des Dreiecks entspricht dem Wert des Geometriewinkels. 
+Dieser beträgt $\theta_g = \SI{0.7}{\degree}$. 
+Mithilfe der Formel \eqref{eq:geometrie} und dem gemessenen Durchmesser der Probe, der $D = \SI{21.5}{\milli\metre}$ beträgt, ergibt sich die Strahlhöhe $d_0 = \SI{0.263}{\milli\meter}$ und ein Geometriefaktor von $G = \num{81.85} \cdot \sin \theta_i$ für alle Winkel $\theta_i$ die kleiner als der Geometriewinkel $\theta_g$ sind.
 
 \begin{figure}
     \centering
@@ -50,7 +54,8 @@ Der Geometriewinkel lässt sich aus Abbildung \ref{abb:dreieck} ablesen. Der Abs
 \end{figure}
 
 Aus den Kiessig-Oszillationen ergibt sich nach Gleichung \eqref{eq:kiessig} die Schichtdicke. 
-Dafür müssen die Stellen der Minima bestimmt werden. Hier wurden 8 eindeutige Minima gemessen. Aus den Positionen dieser Minima lässt sich dann der Betrag der Wellenvektorüberträge $q$ bestimmen und aus der Differenz dieser Werte ergibt sich dann die Schichtdicke $z$. Diese beträgt im Mittel $z = \SI{876(30)}{\angstrom}$. Die entsprechenden Werte der einzelnen Minima sind in Tab. \ref{tab:kiessig} aufgetragen. 
+Dafür müssen die Stellen der Minima bestimmt werden. 
+Hier wurden 8 eindeutige Minima gemessen. Aus den Positionen dieser Minima lässt sich dann der Betrag der Wellenvektorüberträge $q$ bestimmen und aus der Differenz dieser Werte ergibt sich dann die Schichtdicke $z$. Diese beträgt im Mittel $z = \SI{876(30)}{\angstrom}$. Die entsprechenden Werte der einzelnen Minima sind in Tab. \ref{tab:kiessig} aufgetragen. 
 
 \begin{table} \caption{Die Stellen der Minima, die Beträge der Wellenvektorüberträge $q$ und die Differenzen dieser Werte sind hier zusammen mit den resultierenden Schichtdicken aufgelistet.}
     \label{tab:kiessig}
@@ -74,8 +79,9 @@ Dafür müssen die Stellen der Minima bestimmt werden. Hier wurden 8 eindeutige 
 
 Zur Bestimmung des Dispersionsprofils wird der Parratt-Algorithmus benutzt. 
 In Abbildung \ref{abb:parratt} sind die Messwerte zusammen mit einer Theoriekure des Parratt-Algorithmus aufgetragen. 
-Als Parameter wurden hierbei nach Formel \eqref{eq:imag} und \eqref{eq:rau} die Werte in Tabelle \ref{tab:parratt} genutzt. Der entsprechende Code befindet sich im Anhang in Kapitel \ref{sec:anhang}.
-In der Theoriekurve passte $z = \SI{8.2}{\angstrom}$ am besten. 
+Als Parameter wurden hierbei nach Formel \eqref{eq:imag} und \eqref{eq:rau} die Werte in Tabelle \ref{tab:parratt} genutzt. 
+Der entsprechende Code befindet sich im Anhang in Kapitel \ref{sec:Anhang}.
+In der Theoriekurve passt $z = \SI{8.2}{\angstrom}$ am besten. 
 
 \begin{table} \caption{Die Parameter, die für den Parratt Algorithmus genutzt wurden. Dabei ist jeweils der Name des Materials, die Dispersion $\delta$, das Produkt aus Wellenlänge und Absorptionskoeffizient $\beta = \frac{\lambda}{4 \pi} \cdot \mu$ und die Faktoren $\sigma$, die die Rauigkeit in den modifizierten Fresnelkoeffizienten beschreiben.}
     \label{tab:parratt}
