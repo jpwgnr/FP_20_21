@@ -1,2 +1,33 @@
 \section{Theorie}
 
+Die Tomographie ist ein bildgebendes Verfahren, das ein Objekt schichtweise darstellt. Strahlung, hier Gammastrahlung, durchdringt das Objekt und liefert durch die Eingangsintensität $I_0$, die gemessenen Intensitäten $N$ und die Wegstrecken $d$ die daraus resultierenden Abschwächungen mit dem Absorptionskoeffizienten $\mu$, die ein Eigenschaft ist, mit der sich das Material identifizieren lässt. 
+Der Ausdruck, der sich dann ergibt lautet
+\begin{equation*}
+    N = I_0 e^{- \sum_i \mu_i d_i}.
+\end{equation*}
+Für $j$ Messungen ergibt sich dann die Gleichung 
+\begin{equation*}
+    \sum_i d_{i,j} \mu_i = \ln \left( \frac{I_0}{N_j} \right),
+\end{equation*}
+bzw. in Matrixschreibweise 
+\begin{align*}
+\mathbf{A} \cdot \mathbf{\mu} = \mathbf{I}.
+\end{align*}
+Der Vektor $\mathbf{I}$ entspricht dabei natürlich den Elementen $\ln \left( \frac{I_0}{N_j} \right)$.
+Hier wurden $i$ Würfel in einem großen Würfel angeordnet. Dabei bezieht sich der Absorptionskoeffizient $\mu_i$ auf den $i$-ten Würfel. Die Längen $d_{i,j}$ ändern sich je nach Würfel ($i$), ändern sich aber so wie die resultierenden Intensitäten je nach Richtung $j$.
+
+Die Inverse der Matrix $\mathbf{A}$ und der Vektor $\mathbf{I}$ passen lassen sich nicht aufeinander anwenden. Daher wird hier ein Trick benutzt und man erweitert die Gleichung auf beiden Seiten mit $\mathbf{A^T}$. Daraus ergibt sich der Ausdruck 
+\begin{equation*}
+    \mathbf{\mu} = \left( \mathbf{A^T} \mathbf{A} \right)^{-1} \mathbf{A^T} \mathbf{I}.
+\end{equation*}
+
+Die Varianzen der Absorptionskoeffizienten ergibt sich über die Varianzen der gemessenen Intensität $\sigma_{I_j}$ und die Matrix $\mathbf{C_{I}}$ hat eben diese auf der Diagonalen stehen.
+
+Die resultierenden Varianzen der Absorptionskoeffizienten stehen dann auf der Diagonalen der Matrix $\mathbf{C_{\mu}}$, die sich nach 
+\begin{equation*}
+    \mathbf{C_{\mu}} = \left( \mathbf{A^T} \mathbf{A} \right)^{-1} \mathbf{A^T} \mathbf{C_{I}} \mathbf{A} \left( \mathbf{A^T} \mathbf{A} \right)^{-1}
+\end{equation*}
+ergibt.
+
+Die Gammastrahlung wechselwirkt mit Materie auf drei Arten. Der Prozess, der hier am wichtigsten ist, ist der Photoeffekt, dann über den Compton-Effekt, der hier hauptsächlich als Untergrund gemessen wird und über den Prozess der Paarbildung, für den die Energie des Photons bei zwei mal der Masse des Elektrons liegen muss.  
+Eine exemplarische Darstellung der Wirkungsquerschnitte dieser drei Prozesse ist in Abb. \ref{abb:wirkungsquerschnitt} dargestellt. 
