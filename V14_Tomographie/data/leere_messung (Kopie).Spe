@@ -1,4 +1,15 @@
-# N
+$SPEC_ID:
+No sample description was entered.
+$SPEC_REM:
+DET# 1
+DETDESC# MYON MCB 337
+AP# Maestro Version 6.06
+$DATE_MEA:
+12/07/2020 09:27:01
+$MEAS_TIM:
+0 300
+$DATA:
+0 511
        1
        2
      199
@@ -511,3 +522,18 @@
        1
        0
        1
+$ROI:
+1
+93 118
+$PRESETS:
+Real Time
+300
+0
+$ENER_FIT:
+-2.326062 0.088583
+$MCA_CAL:
+3
+-2.326062E+000 8.858320E-002 -1.636990E-004 micr
+$SHAPE_CAL:
+3
+0.000000E+000 0.000000E+000 0.000000E+000
