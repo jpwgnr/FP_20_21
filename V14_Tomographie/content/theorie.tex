@@ -1,33 +1,37 @@
 \section{Theorie}
 
-Die Tomographie ist ein bildgebendes Verfahren, das ein Objekt schichtweise darstellt. Strahlung, hier Gammastrahlung, durchdringt das Objekt und liefert durch die Eingangsintensität $I_0$, die gemessenen Intensitäten $N$ und die Wegstrecken $d$ die daraus resultierenden Abschwächungen mit dem Absorptionskoeffizienten $\mu$, die ein Eigenschaft ist, mit der sich das Material identifizieren lässt. 
-Der Ausdruck, der sich dann ergibt lautet
+Die Tomographie ist ein bildgebendes Verfahren, das ein Objekt schichtweise darstellt. Strahlung, hier Gammastrahlung, durchdringt das Objekt und liefert durch die bekannte Eingangsintensität $I_0$, die gemessenen Intensitäten $N_j$ und die gemessenen Wegstrecken $d_{j,i}$ die daraus resultierenden Absorptionskoeffizienten $\mu_i$, mit denen sich das Material identifizieren lässt. 
+Der Zusammenhang der zuvor genannten Größen lautet für $j$ Messungen
 \begin{equation*}
-    N = I_0 e^{- \sum_i \mu_i d_i}.
+    N_j = I_0 \, \exp\left(- \sum_{i} \mu_i \, d_{j,i} \right).
 \end{equation*}
-Für $j$ Messungen ergibt sich dann die Gleichung 
+Durch Umformung ergibt sich dann die Gleichung 
 \begin{equation}\label{eq:linearKoeff}
-    \sum_i d_{i,j} \mu_i = \ln \left( \frac{I_0}{N_j} \right),
+    \sum_i d_{i,j} \, \mu_i = \ln \left( \frac{I_0}{N_j} \right),
 \end{equation}
 bzw. in Matrixschreibweise 
 \begin{align}\label{eq:LGS_mu}
-\mathbf{A} \cdot \mathbf{\mu} = \mathbf{I}.
+\mathbf{A} \cdot \symbf{\mu} = \mathbf{I}.
 \end{align}
-Der Vektor $\mathbf{I}$ entspricht dabei natürlich den Elementen $\ln \left( \frac{I_0}{N_j} \right)$.
-Hier wurden $i$ Würfel in einem großen Würfel angeordnet. Dabei bezieht sich der Absorptionskoeffizient $\mu_i$ auf den $i$-ten Würfel. Die Längen $d_{i,j}$ ändern sich je nach Würfel ($i$), ändern sich aber so wie die resultierenden Intensitäten je nach Richtung $j$.
-
-Die Inverse der Matrix $\mathbf{A}$ und der Vektor $\mathbf{I}$ passen lassen sich nicht aufeinander anwenden. Daher wird hier ein Trick benutzt und man erweitert die Gleichung auf beiden Seiten mit $\mathbf{A^T}$. Daraus ergibt sich der Ausdruck 
+Die Matrix $\mathbf{A}$ enthält dabei die jeweiligen Weglängen, der Vektor $\mathbf{I}$ entspricht den Elementen $\ln\! \left( \frac{I_0}{N_j} \right)$ und der Vektor $\symbf{\mu}$ enthält die Absorptionskoeffizienten.
+Hier wurden $i$ kleine Würfel in einem großen Würfel angeordnet. Dabei bezieht sich der Absorptionskoeffizient $\mu_i$ auf den $i$-ten Würfel.
+Die Inverse der Matrix $\mathbf{A}$ und der Vektor $\mathbf{I}$ lassen sich nicht aufeinander anwenden. Daher werden beiden Seiten mit $\mathbf{A^T}$ erweitert. Dadurch kann jetzt invertiert werden und es ergibt sich der Ausdruck 
 \begin{equation*}
-    \mathbf{\mu} = \left( \mathbf{A^T} \mathbf{A} \right)^{-1} \mathbf{A^T} \mathbf{I}.
+    \symbf{\mu} = \left( \mathbf{A^T} \mathbf{A} \right)^{-1} \mathbf{A^T} \mathbf{I}.
 \end{equation*}
-
-Die Varianzen der Absorptionskoeffizienten ergibt sich über die Varianzen der gemessenen Intensität $\sigma_{I_j}$ und die Matrix $\mathbf{C_{I}}$ hat eben diese auf der Diagonalen stehen.
-
-Die resultierenden Varianzen der Absorptionskoeffizienten stehen dann auf der Diagonalen der Matrix $V[\mu]$, die sich nach 
+Die Varianzen der Absorptionskoeffizienten ergeben sich über die Varianzen der gemessenen Intensität $\sigma_{\mathbf{I}}$ und die Matrix $\mathbf{V_{I}}$ hat eben diese auf der Diagonalen stehen.
+Die resultierenden Varianzen der Absorptionskoeffizienten stehen dann auf der Diagonalen der Matrix $V[\mu]$, die sich zu 
 \begin{equation}\label{eq:kov}
-    V[\mu] = \left(A^TV^{-1}[I]A\right)^{-1}
+    \mathbf{V}[\symbf{\mu}] = \left(\mathbf{A}^T\mathbf{V}^{-1}[\mathbf{I}]\mathbf{A}\right)^{-1}
 \end{equation}
 ergibt.
 
-Die Gammastrahlung wechselwirkt mit Materie auf drei Arten. Der Prozess, der hier am wichtigsten ist, ist der Photoeffekt, dann über den Compton-Effekt, der hier hauptsächlich als Untergrund gemessen wird und über den Prozess der Paarbildung, für den die Energie des Photons bei zwei mal der Masse des Elektrons liegen muss.  
-Eine exemplarische Darstellung der Wirkungsquerschnitte dieser drei Prozesse ist in Abb. \ref{abb:wirkungsquerschnitt} dargestellt. 
+Die Gammastrahlung wechselwirkt mit Materie auf drei Arten. Der dominierende Prozess in diesem Energiebereich ist der Photoeffekt. Der Compton-Effekt wird hier hauptsächlich als Hintergrund gemessen und für die Paarbildung muss die Energie des Photons bei der zweifachen Masse des Elektrons liegen.  
+Eine exemplarische Darstellung der Wirkungsquerschnitte dieser drei Prozesse ist in Abb. \ref{abb:wirkungsquerschnitt} dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/strahlung.jpg}
+    \caption{Beiträge von Photoeffekt, Compton-Effekt und Paarbildung zum Absorptionskoeffizienten von Blei in Abhängigkeit von der Photonenenergie. \cite{strahlung}}
+    \label{abb:wirkungsquerschnitt}
+    \end{figure}
