@@ -142,7 +142,25 @@ Die Zählraten der Projektionen $I_1$ bis $I_{12}$ des inhomogenen Würfels 5 si
     \end{table}
 
 Dieser Würfel ist aus den Materialien der Würfel 2 und 3 zusammengesetzt.
-Die einzelnen Elementarwürfel besitzen somit unterschiedliche Absorptionskoeffizienten, welche das Gleichungssystem \eqref{eq:LGS_mu} erfüllen.
+Die einzelnen Elementarwürfel besitzen somit unterschiedliche Absorptionskoeffizienten, welche das Gleichungssystem \eqref{eq:LGS_mu} mit 
+\begin{equation}
+    A = \SI{1}{\cm}\cdot 
+    \begin{pmatrix}
+        0 & 0 & 0 & 0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 \\
+        0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+        0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0  & \sqrt{2} & 0 \\
+        \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
+        0 & \sqrt{2} & 0 & 0 & 0  & \sqrt{2} & 0 & 0 & 0\\
+        1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+      \end{pmatrix}
+\end{equation}
+erfüllen.
 Aufgrund der Korrelation zwischen den Absorptionskoeffizienten lassen sich die Fehler nicht mehr durch die Gauß'sche Fehlerfortpflanzung berechnen, sondern entsprechen der Wurzel der Diagonalelemente der Kovarianzmatrix \eqref{eq:kov}
 \begin{equation}
     \sigma_{\mu_i} = \sqrt{V[\vec{\mu}]_{ii}} \, .
