@@ -9,7 +9,7 @@ Aufgrund der elektrostatischen Anziehungen gehen die Atome eine Ionenbindung ein
 Durch Dotierung mit einem mehrwertigen Atom, wie zum Beispiel $\text{Sr}^{++}$, wird ein Ladungsüberschuss erzeugt, welcher aufgrund der notwendigen Ladungsneutralität des Kristalls durch eine Leerstelle ausgeglichen wird.
 Diese Leerstelle befindet sich an dem Gitterplatz eines Kations und bildet zusammen mit dem Donatoratom einen permanten Dipol $\vec{P}$ im Kristall.
 Wie in Abbildung \ref{fig:tfig2} zu sehen ist, sind aufgrund der Gitterstruktur des Kristalls nur diskrete Ausrichtungen des Dipols möglich.
-Aufgrund der statistischen Verteilung der Dipolachsen, verschwindet das Gesamtdipolmoment des Kristalls.
+Wegen der statistischen Verteilung der Dipolachsen, verschwindet das Gesamtdipolmoment des Kristalls.
 
 \begin{figure}[H]
     \begin{subfigure}{0.48\textwidth}
@@ -27,10 +27,10 @@ Aufgrund der statistischen Verteilung der Dipolachsen, verschwindet das Gesamtdi
     \caption{Darstellung des Ionenkristalls Kaliumbromid ohne und mit Dotierung durch ein Strontium Atom.}
 \end{figure}
 
-Bei Temperaturen unter $500°$ können sich nur die Leerstellen im Kristall bewegen, sodass die Ausrichtung eines Dipols nur durch Leerstellendiffusion geändert werden kann.
+Bei Temperaturen unter $500°\symup{C}$ können sich nur die Leerstellen im Kristall bewegen, sodass die Ausrichtung eines Dipols nur durch Leerstellendiffusion geändert werden kann.
 Um die Position einer Leerstelle zu ändern, muss eine gewissen Potentialschwelle überwunden werden.
 Folglich ist für die Drehung eines Dipols eine materialspezifische Aktivierungsenergie $W$ erforderlich.
-Nach der Boltzmann-Statistik ist der Anteil ${a=\exp(-\frac{W}{kT})}$ der Dipole in der Lage die Aktivierungsenergie aufgrund ihrer thermischen Anregung aufzubringen.
+Nach der Boltzmann-Statistik ist der Anteil ${a=\exp(-\frac{W}{kT})}$ aller Dipole in der Lage die Aktivierungsenergie aufgrund ihrer thermischen Anregung aufzubringen.
 Die temperaturabhängige Relaxationszeit
 \begin{equation}\label{eq:relax}
   \tau(T)=\tau_0\exp\left( \frac{W}{kT}\right )
@@ -43,23 +43,23 @@ Wird die Probe in ein elektrisches Feld gebracht, ist der Anteil der Dipole, die
     y = L(x) = \coth(x)-\frac{1}{x} \qquad \text{mit} \qquad x=\frac{pE}{kT}
 \end{equation}
 gegeben.
-Hierzu muss die Bedingung erfüllt sein dass die Zeit in dem elektrischen Feld groß gegenüber der Relaxationzeit der Dipole ist.
-Für $pE << kT$ kann die Langevin-Funktion durch eine Taylorentwicklung um $x=0$ zu 
+Hierzu muss die Bedingung erfüllt sein, dass die Zeit in dem elektrischen Feld groß gegenüber der Relaxationszeit der Dipole ist.
+Für $pE \ll kT$ kann die Langevin-Funktion durch eine Taylorentwicklung um $x=0$ zu 
 \begin{equation}\label{eq:Langevin2}
     y(T)=\frac{pE}{3kT}
 \end{equation}
 genähert werden.
 Aufgrund des exponentiellen Zusammenhangs zwischen Relaxationszeit und Temperatur \eqref{eq:relax} lässt sich ein erzeugtes Dipolmoment des Kristalls einfrieren, indem dieser stark abgekühlt wird.
-Dadurch steigt die Relaxationzeit exponentiell an, sodass die Dipole quasi nicht mehr in der Lage sind ihre Richtung zu ändern.
+Dadurch steigt die Relaxationszeit exponentiell an, sodass die Dipole quasi nicht mehr in der Lage sind ihre Richtung zu ändern.
 Beim erneuten Erwärmen des Kristalls kehren diese nach und nach in ihre statistisch verteilten Ausgangspositionen zurück, sodass aufgrund der zeitlichen Änderung des Dipolmoments ein Dipolstrom in Abhängigkeit der Temperatur beobachtet wird.
 Anhand dieses sogenannten Depolarisationsstroms sollen im Folgenden die Aktivierungsenergie $W$ und die charakteristische Relaxationszeit $\tau_0$ abgeleitet werden.
 
 \subsection*{Herleitung des Depolarisationsstroms über die Stromdichte}
-Die Depolarisationsstromdichte setzt sich zusammen aus dem Anteil der ausgerichteten Dipole $y(T)$ \eqref{Langevin} bei der Polarisationstemperatur $T_\text{p}$, dem Dipolmoment $p$ und die Relaxationrate $\frac{dN}{dt}$ der Dipole pro Volumeneinheit
+Die Depolarisationsstromdichte setzt sich zusammen aus dem Anteil der ausgerichteten Dipole \eqref{eq:Langevin} bei einer Polarisationstemperatur $T_\text{p}$, dem Dipolmoment $p$ und der Relaxationsrate $\frac{\symup{d}N}{\symup{dt}}$ der Dipole pro Volumeneinheit
 \begin{equation}\label{eq:stromdichte}
     j(T)=y(T_p)\,p\,\frac{\symup{d}N}{\symup{d}t} \stackrel{\eqref{eq:Langevin2}}{=} \frac{p^2 E}{3kT_p}\frac{\symup{d}N}{\symup{d}t} \, .
 \end{equation}
-Die Relaxaktionsrate lässt sich aus der Relaxationszeit \eqref{eq:relax} und mit einer konstanten Heizrate $b = \frac{\symup{d}T}{\symup{d}t}$ zu
+Bei einer konstanten Heizrate $b = \frac{\symup{d}T}{\symup{d}t}$ lässt sich die Relaxaktionsrate aus der Relaxationszeit \eqref{eq:relax} zu
 \begin{align}
     \frac{\symup{d}N}{\symup{d}t} & = -\frac{N}{\tau(T)}\notag \\
     \Leftrightarrow \quad N & = N_\text{p}\exp\left(-\int_{t_0}^t \frac{\symup{d}t'}{\tau(T)}\right)\notag \\
@@ -67,7 +67,7 @@ Die Relaxaktionsrate lässt sich aus der Relaxationszeit \eqref{eq:relax} und mi
 \end{align}
 bestimmen.
 Hierbei ist $N_\text{p}$ die Anzahl der ausgerichteten Dipole pro Volumeneinheit zum Zeitpunkt $t_0$ bei der Temperatur $T_0$.
-Mit der Relaxationzeit \eqref{eq:relax} und der Anzahl der Dipole N \eqref{eq:AnzN} ergibt sich für die Depolarisationsstromdichte \eqref{eq:stromdichte} der Ausdruck
+Mit der Relaxationszeit \eqref{eq:relax} und der Anzahl der Dipole N \eqref{eq:AnzN} ergibt sich für die Depolarisationsstromdichte \eqref{eq:stromdichte} der Ausdruck
 \begin{equation}\label{eq:stromdichte2}
     j(T)= \frac{p^2E}{3kT_\text{p}}\frac{N_\text{p}}{\tau_0}\exp\left(-\frac{1}{b\tau_0}\int_{T_0}^T \exp\left(-\frac{W}{kT'}\symup{d}T'\right) \right)\exp\left(-\frac{W}{kT}\right)\, .
 \end{equation}
@@ -80,27 +80,27 @@ sodass für die Depolarisationsstromdichte im Anfangsbereich die Näherung
     j(T)\approx    \frac{p^2 E}{3kT_\text{p}}\frac{N_\text{p}}{\tau_0}\exp\left(-\frac{W}{kT}\right)
 \end{equation}
 gilt.
-Aus den Verlauf des Depolarisationsstroms zu Beginn des Erwärmungsprozesses kann also die Aktivierungsenergie $W$ abgeleitet werden.
+Aus dem Verlauf des Depolarisationsstroms zu Beginn des Erwärmungsprozesses kann also die Aktivierungsenergie $W$ abgeleitet werden.
 
 \subsection*{Herleitungs des Depolarisationsstroms über den Polarisationsansatz}
 Der Polarisationsansatz
 \begin{equation}
     \frac{\symup{d}P}{\symup{d}t}=-\frac{P(t)}{\tau(T(t))}
 \end{equation}
-ermöglicht eine genauere Bestimmung der Aktivierungsenergie $W$, indem der gesamte Verlauf den Depolarisationsstroms betrachtet wird.
+ermöglicht eine genauere Bestimmung der Aktivierungsenergie $W$, indem der gesamte Verlauf des Depolarisationsstroms betrachtet wird.
 Hierbei beschreibt $P$ die Polarisation der Probe, welche dem Gesamtdipolmoment pro Volumeneinheit entspricht.
 Die Änderung der Polarisation in eine Probe mit dem Querschnitt $F$ resultiert in einem messbaren Strom
-\begin{equation}
-    i(t)=F\frac{\symup{d}P}{\symup{d}t} \, .
+\begin{equation}\label{eq:strom}
+    i(t)=F\,\frac{\symup{d}P}{\symup{d}t} \, .
 \end{equation}
 Unter der Voraussetzung, dass die Erwärmung der Probe mit einer konstanten Heizrate erfolgt und somit $T\sim t$ ist, folgt durch Integration der Gleichung \eqref{eq:strom} für die Relaxationszeit
-\begin{equation}
-    \tau(T)=\frac{\int_T^\infty i(T')\symup{d}T'}{bi(T)}\,.
-    \stackrel{eqref{eq:relax}}{\Leftrightarrow}\frac{W}{kT} = \ln \left(\frac{\int_T^\infty i(T')\symup{d}T'}{i(T)\tau_0 b}\right)
-\end{equation}
+\begin{align}
+    \tau(T)&= \frac{\int_T^\infty i(T')\symup{d}T'}{i(T)b}\\
+    \stackrel{\eqref{eq:relax}}{\Leftrightarrow}\quad \frac{W}{kT} &= \ln \left(\frac{\int_T^\infty i(T')\symup{d}T'}{i(T)\tau_0 b}\right)
+\end{align}
 In der Anwendung genügt es die obere Integrationgrenze durch einen Wert $T^*$ zu ersetzen, für welchen $i(T^*)\approx 0$ ist.
 
-\subsection{Bestimmung der charakteristischen Relaxationszeit aus dem Maximum des Dopolarisationsstroms}
+\subsection*{Bestimmung der charakteristischen Relaxationszeit aus dem Maximum des Depolarisationsstroms}
 Die charakteristische Relaxationszeit $\tau_0$ wird aus der Lage des Maximums des Depolarisationsstroms abgeleitet.
 Durch Differentiation der Depolarisationsstromdichte \eqref{eq:stromdichte2} ergibt sich der Zusammenhang zwischen Relaxationszeit und Temperatur zu
 \begin{equation}
