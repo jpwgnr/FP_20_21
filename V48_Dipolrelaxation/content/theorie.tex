@@ -72,21 +72,22 @@ Mit der Relaxationszeit \eqref{eq:relax} und der Anzahl der Dipole N \eqref{eq:A
     j(T)= \frac{p^2E}{3kT_\text{p}}\frac{N_\text{p}}{\tau_0}\exp\left(-\frac{1}{b\tau_0}\int_{T_0}^T \exp\left(-\frac{W}{kT'}\symup{d}T'\right) \right)\exp\left(-\frac{W}{kT}\right)\, .
 \end{equation}
 Zu Beginn des Depolarisationprozesses ist stets
-\begin{equation}
+\begin{equation*}
     \int_{T_0}^T \exp\left(-\frac{W}{kT}\symup{d}T' \right) \approx 0\, ,
-\end{equation}
+\end{equation*}
 sodass für die Depolarisationsstromdichte im Anfangsbereich die Näherung
 \begin{equation}
     j(T)\approx    \frac{p^2 E}{3kT_\text{p}}\frac{N_\text{p}}{\tau_0}\exp\left(-\frac{W}{kT}\right)
+    \label{eq:anlauf}
 \end{equation}
 gilt.
 Aus dem Verlauf des Depolarisationsstroms zu Beginn des Erwärmungsprozesses kann also die Aktivierungsenergie $W$ abgeleitet werden.
 
 \subsection*{Herleitungs des Depolarisationsstroms über den Polarisationsansatz}
 Der Polarisationsansatz
-\begin{equation}
+\begin{equation*}
     \frac{\symup{d}P}{\symup{d}t}=-\frac{P(t)}{\tau(T(t))}
-\end{equation}
+\end{equation*}
 ermöglicht eine genauere Bestimmung der Aktivierungsenergie $W$, indem der gesamte Verlauf des Depolarisationsstroms betrachtet wird.
 Hierbei beschreibt $P$ die Polarisation der Probe, welche dem Gesamtdipolmoment pro Volumeneinheit entspricht.
 Die Änderung der Polarisation in eine Probe mit dem Querschnitt $F$ resultiert in einem messbaren Strom
@@ -96,7 +97,7 @@ Die Änderung der Polarisation in eine Probe mit dem Querschnitt $F$ resultiert 
 Unter der Voraussetzung, dass die Erwärmung der Probe mit einer konstanten Heizrate erfolgt und somit $T\sim t$ ist, folgt durch Integration der Gleichung \eqref{eq:strom} für die Relaxationszeit
 \begin{align}
     \tau(T)&= \frac{\int_T^\infty i(T')\symup{d}T'}{i(T)b}\\
-    \stackrel{\eqref{eq:relax}}{\Leftrightarrow}\quad \frac{W}{kT} &= \ln \left(\frac{\int_T^\infty i(T')\symup{d}T'}{i(T)\tau_0 b}\right)
+    \stackrel{\eqref{eq:relax}}{\Leftrightarrow}\quad \frac{W}{kT} &= \ln \left(\frac{\int_T^\infty i(T')\symup{d}T'}{i(T)\tau_0 b}\right) \label{eq:integral}
 \end{align}
 In der Anwendung genügt es die obere Integrationgrenze durch einen Wert $T^*$ zu ersetzen, für welchen $i(T^*)\approx 0$ ist.
 
@@ -104,7 +105,8 @@ In der Anwendung genügt es die obere Integrationgrenze durch einen Wert $T^*$ z
 Die charakteristische Relaxationszeit $\tau_0$ wird aus der Lage des Maximums des Depolarisationsstroms abgeleitet.
 Durch Differentiation der Depolarisationsstromdichte \eqref{eq:stromdichte2} ergibt sich der Zusammenhang zwischen Relaxationszeit und Temperatur zu
 \begin{equation}
-    \tau(T)=\frac{kT_\text{max}^2}{bW} \,.
+    \tau(T_\text{max})=\frac{k T_\text{max}^2}{bW} \,.
+    \label{eq:tmax}
 \end{equation}
 Einsetzen des Wertepaares $(T_\text{max}, \tau(T_\text{max}))$ in Gleichung \eqref{eq:relax} liefert die charakteristische Relaxationszeit $\tau_0$.
 
