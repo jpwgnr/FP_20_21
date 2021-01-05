@@ -210,15 +210,21 @@ W_2_2 = k2 * const.k / const.e
 
 T_max1 = 273.15 -12.4
 T_max2 = 273.15 -16.3 
-tau_max1_anlauf = T_max1**2 * const.k /(b1*W_1_1*const.e)
-tau_max1_int = T_max1**2 * const.k /(b1*W_1_2*const.e)
-tau_max2_anlauf = T_max2**2 * const.k /(b2*W_2_1*const.e)
-tau_max2_int = T_max2**2 * const.k /(b2*W_2_2*const.e)
 
-tau0_1_anlauf = tau_max1_anlauf/unp.exp( W_1_1*const.e/T_max1 / const.k)
-tau0_1_int = tau_max1_int/unp.exp( W_1_2*const.e/T_max1 / const.k)
-tau0_2_anlauf = tau_max2_anlauf/unp.exp( W_2_1*const.e/T_max2 / const.k)
-tau0_2_int = tau_max2_int/unp.exp( W_2_2*const.e/T_max2/ const.k)
+W_1_10 = W_1_1*const.e
+W_1_20 = W_1_2*const.e
+W_2_10 = W_2_1*const.e
+W_2_20 = W_2_2*const.e
+
+tau_max1_anlauf = T_max1**2 * const.k /(b1*W_1_10)
+tau_max1_int = T_max1**2 * const.k /(b1*W_1_20)
+tau_max2_anlauf = T_max2**2 * const.k /(b2*W_2_10)
+tau_max2_int = T_max2**2 * const.k /(b2*W_2_20)
+
+tau0_1_anlauf = tau_max1_anlauf/unp.exp( W_1_10/T_max1 / const.k)
+tau0_1_int = tau_max1_int/unp.exp( W_1_20/T_max1 / const.k)
+tau0_2_anlauf = tau_max2_anlauf/unp.exp( W_2_10/T_max2 / const.k)
+tau0_2_int = tau_max2_int/unp.exp( W_2_20/T_max2/ const.k)
 
 tau1 = tau0_1_anlauf.nominal_value * np.exp(W_1_1.nominal_value *const.e /T1 /const.k)
 tau2 = tau0_1_int.nominal_value * np.exp(W_1_2.nominal_value *const.e /T1 /const.k)
