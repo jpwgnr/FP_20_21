@@ -20,4 +20,4 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 # gib pwd ein in diesem Ordner und den Output dann hier vor /header-matplotlib.tex schreiben, um die plot.py mit Latex zu nutzen
-pgf.preamble : \input{/home/lewis206/FP_20_21/Vorlage/header-matplotlib.tex}
+pgf.preamble : \input{/home/lewis206/FP/Vorlage/header-matplotlib.tex}

@@ -5,6 +5,22 @@ from scipy import stats
 from uncertainties import ufloat
 from scipy.optimize import curve_fit
 
+# z_scan
+
+z, z_intensity = np.genfromtxt("data/z_scan.UXD", unpack=True)
+
+plt.figure()
+plt.xlabel(r"$z$ / \si{\milli\meter}")
+plt.ylabel(r"Anzahl Events $\cdot 10^{6}$")
+plt.axvline(x = -0.36, linestyle="--", color="r", label=r"Strahlbreite $d$")
+plt.axvline(x = -0.12, linestyle="--", color="r")
+plt.plot(z, z_intensity*1e-6, label="Datenpunkte")
+plt.legend(loc="best") 
+plt.grid()
+plt.tight_layout()
+plt.savefig("figures/z_scan.pdf")
+
+
 #Detektor Scan
 
 # read data

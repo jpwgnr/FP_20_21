@@ -32,8 +32,9 @@ Die korrigierten Werte sind gemeinsam mit dem diffusen Scan und den Messwerten i
     \label{abb:diffus}
 \end{figure}
 
-Anschließend werden die Werte am Winkel des Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliciumoberfläche, die sich aus Formel \eqref{eq:r} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich über die Wellenlänge der K-$\alpha$ Linie von Kupfer mit einem Wert von $\lambda = \SI{1.54e-10}{\meter}$. 
+Anschließend werden die Werte am Winkel des zweiten Maximums \SI{0.195}{\degree} normiert und neben der Theoriekurve der Fresnelreflektivität einer idealen glatten Siliciumoberfläche, die sich aus Formel \eqref{eq:r} ergibt, in Abbildung \ref{abb:norm} aufgetragen. Der dafür benötigte Wellenvektor ergibt sich über die Wellenlänge der K-$\alpha$ Linie von Kupfer mit einem Wert von $\lambda = \SI{1.54e-10}{\meter}$. 
 Der benötigte Brechungsindex von Silicium ist $n = \num{1} - \num{7.6e-6} + \num{1.73i e-9}$ \cite{skript}.
+Das erste Maximum entspricht der zweiten eintretenden Totalreflexion der Polysterolschichten, da dann gar keine Energie in dem Polysterol abgegeben wird. Deshalb wird dieser hier gar nicht beachtet.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/messwerte_norm.pdf}
@@ -45,6 +46,19 @@ Der Geometriewinkel lässt sich aus Abbildung \ref{abb:dreieck} ablesen.
 Der Abstand von der Mitte bei $\theta = \SI{0}{\degree}$ zu den Schnittpunkten des Dreiecks entspricht dem Wert des Geometriewinkels. 
 Dieser beträgt $\theta_g = \SI{0.7}{\degree}$. 
 Mithilfe der Formel \eqref{eq:geometrie} und dem gemessenen Durchmesser der Probe, der $D = \SI{21.5}{\milli\metre}$ beträgt, ergibt sich die Strahlhöhe $d_0 = \SI{0.263}{\milli\meter}$ und ein Geometriefaktor von $G = \num{81.85} \cdot \sin \theta_i$ für alle Winkel $\theta_i$ die kleiner als der Geometriewinkel $\theta_g$ sind.
+Alternativ ergibt sich der Geometriewinkel über den Zusammenhang 
+\begin{equation*}
+    \theta_g = \arcsin\left( \frac{d}{D} \right),
+\end{equation*}
+wobei $d$ hier die Strahlbreite ist. Diese lässt sich in dem z-Scan in Abb. \ref{fig:z_scan} ablesen. Sie beträgt $d = \SI{0.32}{\milli\meter}$.
+Daraus ergibt sich der Geometriewinkel $\theta_g = \SI{0.64}{\degree}$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/z_scan.pdf}
+    \caption{Hier sind die Messwerte des z-Scan während der Justage aufgetragen. Die Strahlbreite wird durch die gestrichelten roten Linien dargestellt.}
+    \label{fig:z_scan}
+\end{figure}
 
 \begin{figure}
     \centering
