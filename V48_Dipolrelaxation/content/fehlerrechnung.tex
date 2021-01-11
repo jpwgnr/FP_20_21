@@ -1,1 +1,25 @@
 \section{Fehlerrechnung}
+\label{sec:fehler}
+
+
+Die Fehler der Formeln der $\tau_0$ Werte sind im folgenden angegeben.
+Die Werte $\tau_0$ ergeben sich aus dem Zusammenhang
+\begin{equation*}
+\tau_0 = \tau_{max} \cdot \exp(-\frac{W}{k \cdot T_{max}}).
+\end{equation*}
+
+Dabei hat sowohl $\tau_{max}$ eine Unsicherheit, als auch die Energie $W$. 
+
+Da sich der Wert $\tau_{max}$ durch
+\begin{equation*}
+    \tau_{max} = \frac{T_{max}^2 \cdot k}{W \cdot b}
+\end{equation*}
+ergibt, ist die Unsicherheit $\Delta \tau_{max}$ zu 
+\begin{equation*}
+    \Delta \tau_{max} = \sqrt{\left(- \frac{T_{max}^2 \cdot k}{b \cdot W^2} \cdot \Delta W \right)^2 + \left(- \frac{T_{max}^2 \cdot k}{b^2 \cdot W}  \cdot \Delta b \right)^2}.
+\end{equation*}
+
+Die Unsicherheit des gesuchten Werts $\Delta \tau_0$ ergibt sich also als 
+ \begin{equation*}
+     \Delta \tau_0 = \sqrt{\left(- \frac{\tau_{max}}{ T_{max} k} \exp(\frac{-W}{k\cdot T_{max}}) \cdot \Delta W \right)^2 + \left(\exp(\frac{-W}{k\cdot T_{max}}) \cdot \Delta \tau_{max} \right)^2}.
+ \end{equation*}

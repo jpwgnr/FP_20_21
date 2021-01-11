@@ -30,6 +30,7 @@ an die Werte im Bereich außerhalb des Peaks gefittet und von den gesamten Daten
     a_{2} &= \SI{3.5(4)e-8}{\pico\ampere} \\
     b_{2} &= \SI{2.46(4)e3}{\kelvin}. \\
 \end{align*}
+Nachdem ein klarer Trend in den Daten erkannt wurde und sowieso schon doppelt so viele Datenpunkte aufgenommen worden waren, wie von der Anleitung verlangt, wurde die Messung für beide Heizraten abgebrochen, da diese keinen Mehrwert für den Fit, also die statistische Unsicherheit auf die Werte, bedeutet hätte.
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/data_w_bkg1.pdf}
@@ -46,20 +47,20 @@ Nach der Subtraktion des Untergrunds entstehen die beiden in Abb. \ref{abb:wo_bk
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/data_wo_bkg1.pdf}
-    \caption{Die Messwerte der ersten Heizrate nachdem der gefittete Untergrund abgezogen wurde. Besonders hervorgehoben sind die Daten, die im Anschluss für die beiden Verfahren zur Bestimmung der Aktivierungsenergie $W$ benutzt werden. Die Daten für die Anlaufkurve sind in orange dargestellt, die Daten für das Integral-Verfahren sind die orangenen und die grünen Werte.}
+    \caption{Die Messwerte der ersten Heizrate nachdem der gefittete Untergrund abgezogen wurde. Besonders hervorgehoben sind die Daten, die im Anschluss für die beiden Verfahren zur Bestimmung der Aktivierungsenergie $W$ benutzt werden. Die Daten für die Anlaufkurve sind in Grün dargestellt, die Daten für das Integral-Verfahren sind die orangenen und die grünen Werte.}
     \label{abb:wo_bkg1}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/data_wo_bkg2.pdf}
-    \caption{Die Messwerte der zweiten Heizrate nachdem der gefittete Untergrund abgezogen wurde. Besonders hervorgehoben sind die Daten, die im Anschluss für die beiden Verfahren zur Bestimmung der Aktivierungsenergie $W$ benutzt werden. Die Daten für die Anlaufkurve sind in orange dargestellt, die Daten für das Integral-Verfahren sind die orangenen und die grünen Werte.}
+    \caption{Die Messwerte der zweiten Heizrate nachdem der gefittete Untergrund abgezogen wurde. Besonders hervorgehoben sind die Daten, die im Anschluss für die beiden Verfahren zur Bestimmung der Aktivierungsenergie $W$ benutzt werden. Die Daten für die Anlaufkurve sind in Grün dargestellt, die Daten für das Integral-Verfahren sind die orangenen und die grünen Werte.}
     \label{abb:wo_bkg2}
 \end{figure}
-Die orangenen Werte werden also logarithmiert und als Gerade gegen die inverse Temperatur gefittet. Der sich daraus ergebende Wert ist bereits proportional zur Aktivierungsenergie $W$, muss aber noch mit der Boltzmann Konstante multipliziert werden, damit er der Aktivierungsenergie $W$ entspricht. Die Steigung $m$ der Geraden und deren Schnittpunkt mit der $I$-Achse $n$ ergeben sich zu 
+Die grünen Werte werden also logarithmiert und als Gerade gegen die inverse Temperatur gefittet. Der sich daraus ergebende Wert ist bereits proportional zur Aktivierungsenergie $W$, muss aber noch mit der Boltzmann Konstante multipliziert werden, damit er der Aktivierungsenergie $W$ entspricht. Die Steigung $m$ der Geraden und deren Schnittpunkt mit der $I$-Achse $n$ ergeben sich zu 
 \begin{align*}
-     m_{1} &= \num{-8.36(27)e3} \\
+     m_{1} &= \SI{-8.36(27)e3}{\kelvin} \\
      n_{1} &= \num{35.1(11)} \\
-     m_{2} &= \num{-9.87(28)e3} \\
+     m_{2} &= \SI{-9.87(28)e3}{\kelvin} \\
      n_{2} &= \num{41.2(11)}. \\
 \end{align*}
 Somit liegen die beiden Aktivierungsenergien $W$, die sich daraus ergeben bei 
@@ -86,9 +87,9 @@ Die Werte und die Ausgleichsgeraden sind in Abb. \ref{abb:anlauf1} und Abb. \ref
 Das Integralverfahren nach Gleichung \eqref{eq:integral} wird mithilfe der Simpson Regel ausgeführt. Der Bereich der orangenen und grünen Werte wird dabei Schrittweise integriert und entsprechend der Gleichung ergibt sich dann ein linearer Zusammenhang.
 Aus der ermittelten Steigung lässt sich erneut die Aktivierungsenergie $W$ bestimmen. Die Werte und Geraden sind in Abb. \ref{abb:integral1} und \ref{abb:integral2} dargestellt. Die Werte die sich durch die Ausgleichsrechnung ergeben, sind 
 \begin{align*}
-    m_{1} &= \num{1.011(17)e4} \\
+    m_{1} &= \SI{1.011(17)e4}{\kelvin} \\
     n_{1} &= \num{-37.5(7)} \\
-    m_{2} &= \num{1.049(16)e4} \\
+    m_{2} &= \SI{1.049(16)e4}{\kelvin} \\
     n_{2} &= \num{-39.1(6)} \\
 \end{align*}
 und die beiden Aktivierungsenergien $W$, die sich daraus ergeben sind 
@@ -114,7 +115,7 @@ und die beiden Aktivierungsenergien $W$, die sich daraus ergeben sind
 Mithilfe der ermittelten Aktivierungsenergie $W$ ergibt sich über Gleichung \eqref{eq:tmax} und die Temperaturen bei den Maxima der Kurven, die bei 
 \begin{align*}
     T_\text{max,1} &= \SI{260.75}{\kelvin} \\
-    T_\text{max,1} &= \SI{256.85}{\kelvin} \\
+    T_\text{max,2} &= \SI{256.85}{\kelvin} \\
 \end{align*}
 liegen, die Zeit $\tau_0$ für beide Heizraten. Da vier relativ verschiedene Werte für die Aktivierungsenergien $W$ bestimmt wurden, ergeben sich daraus auch vier verschiedene Werte für $\tau_0$.
 Diese sind 
@@ -125,6 +126,7 @@ Diese sind
     \tau_\text{0, 2, Integral} &= \SI{9(6)e-18}{\second}. \\
 \end{align*}
 
+Zur Bestimmung der Unsicherheiten wird die Methode der Gaußsche Fehlerfortpflanzung benutzt. Die expliziten Formeln dafür sind im Anhang in Kapitel \ref{sec:fehler}.
 Die aus den Zeiten $\tau_0$ resultierenden Kurven nach Gleichung \eqref{eq:relax} sind in Abb. \ref{abb:tau} dargestellt.
 
 \begin{figure}

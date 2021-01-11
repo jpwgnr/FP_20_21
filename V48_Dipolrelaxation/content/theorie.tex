@@ -27,10 +27,10 @@ Wegen der statistischen Verteilung der Dipolachsen, verschwindet das Gesamtdipol
     \caption{Darstellung des Ionenkristalls Kaliumbromid ohne und mit Dotierung durch ein Strontium Atom. Diese Darstellungen wurden mit Goodnotes 5 \cite{GN5} erstellt.}
 \end{figure}
 
-Bei Temperaturen unter $500°\symup{C}$ können sich nur die Leerstellen im Kristall bewegen, sodass die Ausrichtung eines Dipols nur durch Leerstellendiffusion geändert werden kann.
+Bei Temperaturen unter $\SI{500}{\celsius}$ können sich nur die Leerstellen im Kristall bewegen, sodass die Ausrichtung eines Dipols nur durch Leerstellendiffusion geändert werden kann.
 Um die Position einer Leerstelle zu ändern, muss eine gewissen Potentialschwelle überwunden werden.
 Folglich ist für die Drehung eines Dipols eine materialspezifische Aktivierungsenergie $W$ erforderlich.
-Nach der Boltzmann-Statistik ist der Anteil ${a=\exp(-\frac{W}{kT})}$ aller Dipole in der Lage die Aktivierungsenergie aufgrund ihrer thermischen Anregung aufzubringen.
+Nach der Boltzmann-Statistik ist der Anteil ${a \propto \exp(-\frac{W}{kT})}$ aller Dipole in der Lage die Aktivierungsenergie aufgrund ihrer thermischen Anregung aufzubringen.
 Die temperaturabhängige Relaxationszeit
 \begin{equation}\label{eq:relax}
   \tau(T)=\tau_0\exp\left( \frac{W}{kT}\right )
@@ -38,7 +38,7 @@ Die temperaturabhängige Relaxationszeit
 ist die mittlere Zeit zwischen zwei Umorientierungen.
 Hierbei wird $\tau_0$ charakteristische Relaxationszeit genannt und entspricht dem Grenzwert der Relaxationszeit für sehr hohe Temperaturen $\tau_0 = \tau(T\rightarrow \infty)$.
 
-Wird die Probe in ein elektrisches Feld gebracht, ist der Anteil der Dipole, die sich entlang der Feldlinien ausrichten, durch die Langevin Funktion
+Wird die Probe in ein elektrisches Feld gebracht, ist der Anteil der Dipole, der sich entlang der Feldlinien ausrichtet, durch die Langevin Funktion
 \begin{equation}\label{eq:Langevin}
     y = L(x) = \coth(x)-\frac{1}{x} \qquad \text{mit} \qquad x=\frac{pE}{kT}
 \end{equation}
@@ -71,7 +71,7 @@ Mit der Relaxationszeit \eqref{eq:relax} und der Anzahl der Dipole N \eqref{eq:A
 \begin{equation}\label{eq:stromdichte2}
     j(T)= \frac{p^2E}{3kT_\text{p}}\frac{N_\text{p}}{\tau_0}\exp\left(-\frac{1}{b\tau_0}\int_{T_0}^T \exp\left(-\frac{W}{kT'}\symup{d}T'\right) \right)\exp\left(-\frac{W}{kT}\right)\, .
 \end{equation}
-Zu Beginn des Depolarisationprozesses ist stets
+Da die Temperatur zu Beginn des Depolarisationprozesses klein und somit $\exp(-\frac{W}{kT})\approx 0$ ist, ist stets
 \begin{equation*}
     \int_{T_0}^T \exp\left(-\frac{W}{kT}\symup{d}T' \right) \approx 0\, ,
 \end{equation*}
